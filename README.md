@@ -1,135 +1,146 @@
 # CAREFLOW Hospital Management System
 
-CAREFLOW is a web-based Hospital Management System developed to support the digital management of core hospital operations.
+CAREFLOW is a web-based **Hospital Management System** developed as a student project for the **MSc Health Informatics** program.
 
-The system provides a centralized platform for managing patients, doctors, appointments, billing, medical records, reports, user access, and system settings.
+The system is designed to manage core hospital workflows through a centralized web application, including patient registration, doctor management, appointments, medical records, billing, reporting, and role-based access control.
+
+---
 
 ## Project Overview
 
-CAREFLOW was developed as a Health Informatics and healthcare IT project with the aim of improving the organization, accessibility, and management of hospital information.
+CAREFLOW provides a structured digital platform for managing common hospital administrative and clinical workflows.
 
-The system replaces fragmented manual processes with a structured web-based interface where authorized users can manage hospital data according to their assigned roles.
+The system includes:
 
-## Key Features
-
-* Patient registration and management
-* Doctor registration and management
-* Appointment scheduling and management
-* Billing and payment management
-* Medical record management
-* Hospital reports and CSV export
+* Patient Management
+* Doctor Management
+* Appointment Management
+* Medical Record Management
+* Billing Management
+* Report Generation
+* CSV, PDF, and DOCX report downloads
 * Role-based access control
-* User management
-* System settings
-* Dashboard with hospital statistics
-* Search and record management
+* Search functionality
 * Edit and delete operations
-* Responsive user interface
-* Hospital-themed interface with custom background and branding
+* Hospital dashboard
+* Centralized database management
 
-## Main Modules
+The interface uses a consistent hospital-management design with a CAREFLOW header, sidebar navigation, system status, user information, and footer.
 
-### 1. Dashboard
+---
 
-The dashboard provides an overview of hospital operations and displays important information such as:
+## Main Features
 
-* Patient statistics
-* Doctor statistics
-* Appointment statistics
-* Billing information
-* Recent appointments
-* Quick access to major hospital modules
+### 1. Patient Management
 
-### 2. Patient Management
+The Patient Management module allows authorized users to:
 
-The patient module allows authorized users to:
-
-* Register patients
-* Store patient information
-* View patient records
+* Register new patients
+* Store patient name, gender, age, phone number, and address
+* View the patient list
+* Search patients by name, phone, or address
 * Edit patient information
 * Delete patient records
-* Search and manage registered patients
+* View a dedicated patient report
+* Download patient reports
 
-### 3. Doctor Management
+### 2. Doctor Management
 
-The doctor module provides functionality for:
+The Doctor Management module provides:
 
 * Doctor registration
-* Viewing doctor information
-* Editing doctor details
-* Deleting doctor records
-* Managing doctor-related information
+* Doctor name and specialization management
+* Email and phone information
+* Doctor search
+* Edit doctor details
+* Delete doctor records
+* Doctor reporting
+* Report downloads
 
-### 4. Appointment Management
+### 3. Appointment Management
 
-The appointment module allows hospital staff to:
+The Appointment Management module supports:
 
-* Create appointments
-* View appointment lists
-* Edit appointments
-* Delete appointments
-* View patient and doctor information associated with appointments
-* Export appointment information as CSV
+* Booking appointments
+* Selecting patients and doctors
+* Appointment date and time
+* Searching appointments
+* Searching by patient or doctor
+* Date-based appointment searching
+* Viewing today's appointments
+* Editing appointments
+* Deleting appointments
+* Appointment reporting
+* Report downloads
+
+### 4. Medical Record Management
+
+The Medical Record module allows authorized clinical users to:
+
+* Select a patient
+* Record diagnosis
+* Record treatment
+* Record medicines
+* View medical records
+* Edit medical records
+* Delete medical records
+* Generate medical record reports
+* Download reports
 
 ### 5. Billing Management
 
-The billing module supports:
+The Billing module provides:
 
-* Creating billing records
-* Linking bills with patients
-* Recording billing amounts
-* Recording payment methods
-* Editing billing information
-* Deleting billing records
-* Viewing billing lists
-* Exporting billing information as CSV
+* Patient selection
+* Bill creation
+* Amount entry
+* Payment method selection
+* Billing history
+* Edit billing information
+* Delete billing records
+* Billing reports
+* Report downloads
 
-### 6. Medical Records
+Supported payment methods include:
 
-The medical record module allows authorized users to manage:
+* Cash
+* Card
+* UPI
+* Insurance
 
-* Patient medical records
-* Diagnoses
-* Treatments
-* Medicines
-* Record editing
-* Record deletion
-* Medical record reports
-* CSV export
+---
 
-### 7. Reports
+## Reporting System
 
-CAREFLOW provides report pages for important hospital information, including:
+Each major management module includes a **Report** and **Download** option.
+
+The report pages provide dedicated views for:
 
 * Patient reports
 * Doctor reports
 * Appointment reports
-* Billing reports
 * Medical record reports
+* Billing reports
 
-Reports can also be exported in CSV format for further analysis or documentation.
+The Download menu provides options for different report formats:
 
-### 8. User Management
+* CSV
+* PDF
+* DOCX
 
-The administration module provides functionality for managing system users and controlling access to hospital information.
+CSV reports are generated directly from the database records.
 
-### 9. Settings
+PDF reports are generated using **Dompdf**.
 
-The settings module provides configurable options related to:
+DOCX reports are generated using **PHPWord**.
 
-* User preferences
-* Shift status
-* Notifications
-* Care team information
-* EHR and device information
-* Security and system logs
+---
 
-## User Roles
+## Role-Based Access Control
 
-CAREFLOW implements role-based access control so that users can access functionality according to their responsibilities.
+CAREFLOW uses role-based access control to restrict access to different modules.
 
-The system includes roles such as:
+Current roles include:
 
 * System Administrator
 * Doctor
@@ -137,242 +148,388 @@ The system includes roles such as:
 * Reception
 * Billing
 
-Different modules and operations are restricted according to the assigned user role.
+Different modules require different authorized roles.
+
+For example:
+
+| Module                 | Authorized Roles                               |
+| ---------------------- | ---------------------------------------------- |
+| Patient Management     | System Administrator, Doctor, Nurse, Reception |
+| Doctor Management      | System Administrator, Doctor                   |
+| Appointment Management | System Administrator, Doctor, Nurse, Reception |
+| Medical Records        | System Administrator, Doctor, Nurse            |
+| Billing                | System Administrator, Billing                  |
+
+Access control is handled through the project's centralized access-control system.
+
+---
 
 ## Technology Stack
 
-| Technology   | Purpose                             |
-| ------------ | ----------------------------------- |
-| PHP          | Server-side application development |
-| MySQL        | Database management                 |
-| HTML5        | Page structure                      |
-| CSS3         | User interface and styling          |
-| JavaScript   | Client-side functionality           |
-| Font Awesome | Interface icons                     |
-| WAMP Server  | Local development environment       |
-| Git          | Version control                     |
-| GitHub       | Source code management              |
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+* Font Awesome
+
+### Backend
+
+* PHP
+* MySQL
+* MySQLi
+
+### Development Environment
+
+* WAMP Server
+* Apache
+* PHP
+* MySQL
+* phpMyAdmin
+* Git
+* GitHub
+
+### Report Generation
+
+* Dompdf
+* PHPWord
+* Composer
+
+---
 
 ## Project Structure
 
 ```text
-CAREFLOW-Hospital-Management-System/
-│
-├── admin/
-│   └── User management
-│
-├── appointments/
-│   ├── Appointment registration
-│   ├── Appointment editing
-│   └── Appointment deletion
-│
-├── billing/
-│   ├── Billing management
-│   ├── Billing editing
-│   └── Billing deletion
+HospitalProject_V2/
 │
 ├── dashboard/
-│   └── Hospital dashboard
+│   └── mango_dashboard.php
 │
-├── doctors/
-│   ├── Doctor management
-│   ├── Doctor editing
-│   └── Doctor deletion
-│
-├── patients/
-│   ├── Patient management
-│   ├── Patient editing
-│   └── Patient deletion
-│
-├── records/
-│   ├── Medical records
-│   ├── Record editing
-│   └── Record deletion
-│
-├── reports/
-│   ├── Patient reports
-│   ├── Doctor reports
-│   ├── Appointment reports
-│   ├── Billing reports
-│   └── Medical record reports
-│
-├── settings/
-│   └── System settings
+├── database/
+│   └── peach_database.php
 │
 ├── css/
-│   └── CAREFLOW styling
-│
-├── images/
-│   ├── careflow.jpg
-│   ├── hospital.jpg
-│   └── logo.png
+│   └── watermelon_style.css
 │
 ├── includes/
-│   ├── Access control
-│   ├── Header
-│   ├── Footer
-│   └── Sidebar
+│   ├── coconut_header.php
+│   ├── coconut_sidebar.php
+│   ├── coconut_footer.php
+│   └── coconut_access.php
 │
-├── avocado_login.php
-├── avocado_register.php
-├── banana_forgot_password.php
-├── pineapple_script.js
+├── images/
+│   └── logo.png
+│
+├── patient/
+│   ├── patient management files
+│   ├── edit patient
+│   └── delete patient
+│
+├── doctor/
+│   ├── doctor management files
+│   ├── edit doctor
+│   └── delete doctor
+│
+├── appointment/
+│   ├── appointment management files
+│   ├── edit appointment
+│   └── delete appointment
+│
+├── medical_record/
+│   ├── medical record management files
+│   ├── edit record
+│   └── delete record
+│
+├── billing/
+│   ├── billing management files
+│   ├── edit bill
+│   └── delete bill
+│
+├── reports/
+│   ├── melon_patient_report.php
+│   ├── melon_doctor_report.php
+│   ├── melon_appointment_report.php
+│   ├── melon_medical_record_report.php
+│   └── melon_billing_report.php
+│
+├── downloads/
+│   ├── patient_pdf.php
+│   ├── patient_docx.php
+│   └── other report download files
+│
+├── vendor/
+│   └── Composer dependencies
+│
+├── composer.json
+├── composer.lock
 └── README.md
 ```
 
-## Database
+> The exact folder names may vary depending on the current project organization.
 
-CAREFLOW uses a MySQL relational database to store and manage hospital information.
+---
 
-The database supports major entities such as:
+## Report Generation Dependencies
 
-* Users
-* Patients
-* Doctors
-* Appointments
-* Billing
-* Medical Records
+The project uses Composer to manage report-generation libraries.
 
-Relationships between these entities allow information to be connected across different hospital workflows.
+### Dompdf
 
-For example:
+Dompdf is used to generate PDF reports.
 
-```text
-Patient
-   │
-   ├── Appointments ─── Doctor
-   │
-   ├── Billing
-   │
-   └── Medical Records
+Installed package:
+
+```bash
+composer require dompdf/dompdf
 ```
 
-## Security and Access Control
+### PHPWord
 
-The application uses PHP sessions for authentication and role-based authorization.
+PHPWord is used to generate Microsoft Word `.docx` reports.
 
-Before accessing protected modules, the system verifies:
+Installed package:
 
-* Whether the user is logged in
-* The user's assigned role
-* Whether the role is authorized to access the requested module
+```bash
+composer require phpoffice/phpword
+```
 
-Unauthorized users are prevented from accessing restricted pages.
+After installing the dependencies, Composer generates the required `vendor` directory and autoload files.
 
-## Reporting
+---
 
-The reporting module provides structured lists of hospital information.
+## Installation
 
-Users can view details such as:
+### 1. Install WAMP
 
-* Patient information
-* Doctor information
-* Appointment details
-* Billing details
-* Medical record information
+Install WAMP Server with:
 
-Selected reports can be exported as CSV files for use in spreadsheets and further analysis.
-
-## Local Installation
-
-### Requirements
-
-Before running CAREFLOW locally, install:
-
-* WAMP Server
 * Apache
 * MySQL
 * PHP
-* Web browser
-* Git (optional)
+* phpMyAdmin
 
-### Setup
-
-1. Clone the repository:
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/Betty-py-mahe/CAREFLOW-Hospital-Management-System.git
 ```
 
-2. Place the project inside the WAMP `www` directory:
+### 3. Move the Project
+
+Place the project inside:
 
 ```text
-C:/wamp64/www/
+C:\wamp64\www\
 ```
 
-3. Create the required MySQL database using phpMyAdmin.
+The final project path should be:
 
-4. Configure the database connection file with the local database credentials.
+```text
+C:\wamp64\www\HospitalProject_V2
+```
 
-5. Start Apache and MySQL from WAMP.
+### 4. Start WAMP
 
-6. Open the application in a browser using the local WAMP URL.
+Start:
 
-Example:
+* Apache
+* MySQL
+
+### 5. Configure the Database
+
+Create the required MySQL database using phpMyAdmin.
+
+Update the database connection file:
+
+```text
+database/peach_database.php
+```
+
+with the appropriate database credentials.
+
+### 6. Install Composer Dependencies
+
+Open Git Bash inside the project directory:
+
+```bash
+cd /c/wamp64/www/HospitalProject_V2
+```
+
+Then run:
+
+```bash
+composer install
+```
+
+This installs the dependencies defined in `composer.json`.
+
+### 7. Open the Application
+
+Open the project through:
 
 ```text
 http://localhost/HospitalProject_V2/
 ```
 
-## Project Objectives
+---
 
-The main objectives of CAREFLOW are to:
+## Report Download System
 
-1. Digitize core hospital administrative workflows.
-2. Centralize patient and hospital information.
-3. Improve accessibility of hospital records.
-4. Reduce dependence on fragmented manual documentation.
-5. Provide role-based access to sensitive hospital information.
-6. Simplify appointment and billing management.
-7. Provide structured reporting and CSV export functionality.
-8. Demonstrate the application of healthcare IT concepts in a practical hospital management system.
+The system uses a separate download layer for generated reports.
 
-## Health Informatics Relevance
+For example, the patient PDF report can be accessed through the application's download system.
 
-CAREFLOW demonstrates how health information systems can support hospital operations by connecting clinical and administrative workflows through a centralized information platform.
+Report formats are organized as:
 
-The project incorporates concepts including:
+```text
+CSV
+PDF
+DOCX
+```
 
-* Health Information Management
-* Electronic Medical Records
-* Role-Based Access Control
-* Healthcare Workflow Management
-* Clinical and Administrative Data Management
-* Hospital Reporting
-* Data Organization
-* Digital Transformation in Healthcare
+This allows hospital records to be viewed within the application while also providing export functionality for reporting and documentation.
 
-## Future Improvements
+---
 
-Potential future enhancements include:
+## User Interface
 
-* Integration with a cloud-hosted database
-* Automated appointment reminders
-* Email/SMS notifications
-* Advanced hospital analytics
-* Power BI dashboard integration
-* Audit trails for user activities
-* Improved data validation
-* Secure password hashing and authentication enhancements
-* FHIR-based interoperability
-* Integration with hospital information systems
-* More advanced clinical decision-support functionality
+The CAREFLOW interface includes:
 
-## Project Status
+* Hospital management dashboard
+* Navigation sidebar
+* Header with CAREFLOW branding
+* System status indicator
+* Logged-in user display
+* Current date display
+* Settings button
+* Consistent management-page layout
+* Report and Download controls
+* Responsive report tables
+* Footer section
 
-**Status: Completed**
+The CAREFLOW logo and visual styling are maintained through the project's centralized CSS and header files.
 
-CAREFLOW currently provides functional modules for patient management, doctor management, appointments, billing, medical records, reporting, user management, and system settings.
+---
+
+## Security Features
+
+The project includes basic application-level security mechanisms such as:
+
+* Session-based authentication
+* Role-based authorization
+* Restricted access to management modules
+* Prepared statements for several database operations
+* HTML output escaping in report pages
+* Confirmation prompts before deletion
+
+Example:
+
+```php
+requireRole([
+    "System Administrator",
+    "Doctor"
+]);
+```
+
+This ensures that only authorized roles can access specific modules.
+
+---
+
+## Database Modules
+
+The system currently works with major database entities including:
+
+```text
+patient
+doctor
+appointment
+medical_record
+billing
+```
+
+Relationships between these entities allow the system to connect:
+
+```text
+Patient
+   │
+   ├── Appointments
+   │       └── Doctor
+   │
+   ├── Medical Records
+   │
+   └── Billing
+```
+
+---
+
+## Current Development Status
+
+### Completed
+
+* [x] Login/session management
+* [x] Role-based access control
+* [x] Hospital dashboard
+* [x] Patient management
+* [x] Doctor management
+* [x] Appointment management
+* [x] Medical record management
+* [x] Billing management
+* [x] Search functionality
+* [x] Edit functionality
+* [x] Delete functionality
+* [x] Report pages
+* [x] CSV export
+* [x] PDF report generation
+* [x] DOCX report generation
+* [x] Composer dependency management
+* [x] CAREFLOW header and navigation
+* [x] CAREFLOW logo integration
+* [x] Report footer positioning
+
+### Future Enhancements
+
+Possible future improvements include:
+
+* Advanced dashboard analytics
+* Interactive charts
+* Improved search and filtering
+* Appointment status management
+* Automated notifications
+* Audit logs
+* More granular permissions
+* Improved validation
+* Database backup functionality
+* Enhanced security controls
+* Responsive mobile interface
+
+---
+
+## Project Purpose
+
+This project was developed as part of the **MSc Health Informatics** program to demonstrate the application of health informatics concepts in a practical hospital information-management environment.
+
+The system combines healthcare workflow concepts with web-based information technology to provide a structured platform for managing hospital data.
+
+---
 
 ## Author
 
-**Betty Baby**
+**MSc Health Informatics Student**
 
-M.Sc. Health Informatics
 Manipal Academy of Higher Education (MAHE)
 
-### GitHub
+---
 
-https://github.com/Betty-py-mahe
+## Repository
+
+**CAREFLOW Hospital Management System**
+
+GitHub:
+
+https://github.com/Betty-py-mahe/CAREFLOW-Hospital-Management-System.git
 
 ---
+
+## License
+
+This project is developed as a student/academic project and is intended primarily for educational and demonstration purposes.
