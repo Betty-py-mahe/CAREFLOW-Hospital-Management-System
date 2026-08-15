@@ -1,3 +1,4 @@
+
 <?php
 
 /* =========================================
@@ -67,34 +68,6 @@ if (
 
 
 /* =========================================
-   PATIENT LIST REPORT
-   Administrator, Doctor, Nurse, Reception
-   ========================================= */
-
-if (
-    $user_role == "System Administrator" ||
-    $user_role == "Doctor" ||
-    $user_role == "Nurse" ||
-    $user_role == "Reception"
-)
-{
-
-?>
-
-<a href="../reports/melon_patient_report.php">
-
-    <i class="fa-solid fa-file-medical"></i>
-
-    Patient List
-
-</a>
-
-<?php
-
-}
-
-
-/* =========================================
    DOCTORS
    Administrator, Doctor
    ========================================= */
@@ -112,17 +85,6 @@ if (
     <i class="fa-solid fa-user-doctor"></i>
 
     Doctors
-
-</a>
-
-
-<!-- DOCTOR LIST REPORT -->
-
-<a href="../reports/melon_doctor_report.php">
-
-    <i class="fa-solid fa-file-medical"></i>
-
-    Doctor List
 
 </a>
 
@@ -154,17 +116,6 @@ if (
 
 </a>
 
-
-<!-- APPOINTMENT LIST REPORT -->
-
-<a href="../reports/melon_appointment_report.php">
-
-    <i class="fa-solid fa-file-medical"></i>
-
-    Appointment List
-
-</a>
-
 <?php
 
 }
@@ -193,17 +144,6 @@ if (
 
 </a>
 
-
-<!-- MEDICAL RECORD LIST REPORT -->
-
-<a href="../reports/melon_medical_record_report.php">
-
-    <i class="fa-solid fa-file-medical"></i>
-
-    Medical Record List
-
-</a>
-
 <?php
 
 }
@@ -228,17 +168,6 @@ if (
     <i class="fa-solid fa-file-invoice-dollar"></i>
 
     Billing
-
-</a>
-
-
-<!-- BILLING LIST REPORT -->
-
-<a href="../reports/melon_billing_report.php">
-
-    <i class="fa-solid fa-file-invoice"></i>
-
-    Billing List
 
 </a>
 
@@ -286,3 +215,4 @@ if ($user_role == "System Administrator")
 
 
 </div>
+

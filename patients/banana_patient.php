@@ -80,11 +80,180 @@ include("../includes/coconut_sidebar.php");
 
 ?>
 
-<h2 class="page_title">
+<div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:92%;
+    margin:30px auto 24px auto;
+">
 
-👤 Patient Management
+    <h2 class="page_title" style="margin:0;">
 
-</h2>
+        👤 Patient Management
+
+    </h2>
+
+    <div style="
+        display:flex;
+        gap:10px;
+        align-items:center;
+    ">
+
+        <a
+        href="../reports/melon_patient_report.php"
+        style="
+            display:inline-flex;
+            align-items:center;
+            gap:7px;
+            padding:9px 15px;
+            background:white;
+            border:1px solid lightgray;
+            border-radius:6px;
+            color:darkslateblue;
+            text-decoration:none;
+            font-family:Georgia, 'Times New Roman', serif;
+            font-size:14px;
+            font-weight:600;
+        "
+        >
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            Report
+
+        </a>
+
+
+        
+<div style="position:relative;">
+
+    <button
+    type="button"
+    onclick="togglePatientDownload()"
+    style="
+        display:inline-flex;
+        align-items:center;
+        gap:7px;
+        padding:9px 15px;
+        background:white;
+        border:1px solid lightgray;
+        border-radius:6px;
+        color:darkslateblue;
+        font-family:Georgia, 'Times New Roman', serif;
+        font-size:14px;
+        font-weight:600;
+        cursor:pointer;
+    "
+    >
+
+        <i class="fa-solid fa-download"></i>
+
+        Download
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+
+    <div
+    id="patientDownloadMenu"
+    style="
+        display:none;
+        position:absolute;
+        right:0;
+        top:42px;
+        min-width:150px;
+        background:white;
+        border:1px solid lightgray;
+        border-radius:6px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.15);
+        z-index:1000;
+    "
+    >
+
+        <a
+        href="../reports/melon_patient_report.php?download=csv"
+        style="
+            display:block;
+            padding:10px 14px;
+            color:darkslategray;
+            text-decoration:none;
+        "
+        >
+
+            <i class="fa-solid fa-file-csv"></i>
+
+            CSV
+
+        </a>
+
+
+        <a
+        href="../downloads/patient_pdf.php"
+        style="
+            display:block;
+            padding:10px 14px;
+            color:darkslategray;
+            text-decoration:none;
+        "
+        >
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            PDF
+
+        </a>
+
+
+        <a
+        href="../downloads/patient_docx.php"
+        style="
+            display:block;
+            padding:10px 14px;
+            color:darkslategray;
+            text-decoration:none;
+        "
+        >
+
+            <i class="fa-solid fa-file-word"></i>
+
+            DOCX
+
+        </a>
+
+    </div>
+
+</div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function togglePatientDownload()
+{
+    var menu =
+        document.getElementById(
+            "patientDownloadMenu"
+        );
+
+    if(menu.style.display === "none")
+    {
+        menu.style.display = "block";
+    }
+    else
+    {
+        menu.style.display = "none";
+    }
+}
+
+</script>
 
 
 
@@ -242,11 +411,6 @@ Patient List
 </h2>
 
 
-<?php
-
-echo date("Y-m-d");
-
-?>
 <table border="1" width="90%" align="center">
 
 
@@ -451,3 +615,32 @@ Delete
 include("../includes/coconut_footer.php");
 
 ?>
+
+
+<script>
+
+function togglePatientDownload()
+{
+    var menu =
+        document.getElementById("patientDownloadMenu");
+
+    if (
+        menu.style.display === "none" ||
+        menu.style.display === ""
+    )
+    {
+        menu.style.display = "block";
+    }
+    else
+    {
+        menu.style.display = "none";
+    }
+}
+
+</script>
+
+
+
+</body>
+
+</html>

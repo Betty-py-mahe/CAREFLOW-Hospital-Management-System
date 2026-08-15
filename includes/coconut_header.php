@@ -9,7 +9,7 @@
 <title>CAREFLOW Hospital Management System</title>
 
 <link rel="stylesheet"
-href="/HospitalProject_V2/css/watermelon_style.css?v=3">
+href="/HospitalProject_V2/css/watermelon_style.css?v=4">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

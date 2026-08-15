@@ -112,15 +112,15 @@ body::after{
 
 
 .logo{
-    width:150px;
-    height:150px;
+    width:300px;
+    height:300px;
     object-fit:contain;
 }
 
 
 .logo_section h1{
     color:darkslateblue;
-    font-size:30px;
+    font-size:40px;
     font-weight:700;
     letter-spacing:1px;
 }
@@ -128,7 +128,7 @@ body::after{
 
 .logo_section p{
     color:slategray;
-    font-size:14px;
+    font-size:24px;
     margin-top:2px;
 }
 
@@ -153,27 +153,27 @@ body::after{
 
     border-radius:20px;
 
-    font-size:14px;
+    font-size:24px;
     font-weight:600;
 }
 
 
 .system_status i{
-    font-size:9px;
+    font-size:14px;
     margin-right:5px;
 }
 
 
 .admin_name{
     color:darkslategray;
-    font-size:16px;
+    font-size:18px;
     font-weight:600;
 }
 
 
 .today_date{
     color:slategray;
-    font-size:14px;
+    font-size:19px;
 }
 
 
@@ -221,7 +221,7 @@ body::after{
 
     font-family:"Aptos Serif", Georgia, serif;
 
-    font-size:16px;
+    font-size:20px;
 
     font-weight:600;
 
@@ -293,7 +293,7 @@ body::after{
 
     padding:22px;
 
-    font-size:14px;
+    font-size:20px;
 }
 
 
@@ -341,7 +341,7 @@ body::after{
 .welcome_box p{
     color:slategray;
 
-    font-size:16px;
+    font-size:20px;
 
     margin-top:8px;
 }
@@ -405,7 +405,7 @@ body::after{
 ========================================== */
 
 .card_icon{
-    font-size:42px;
+    font-size:50px;
 
     color:steelblue;
 
@@ -425,7 +425,7 @@ body::after{
 ========================================== */
 
 .card_title{
-    font-size:18px;
+    font-size:24px;
 
     font-weight:bold;
 
@@ -487,7 +487,7 @@ th{
 
     padding:13px;
 
-    font-size:16px;
+    font-size:20px;
 
     font-weight:bold;
 
@@ -508,7 +508,7 @@ td{
 
     border-bottom:1px solid gainsboro;
 
-    font-size:15px;
+    font-size:20px;
 }
 
 
@@ -640,7 +640,7 @@ table a{
 
     text-decoration:none;
 
-    font-size:17px;
+    font-size:20px;
 
     font-weight:bold;
 
@@ -695,7 +695,7 @@ input[type="submit"]{
 
     cursor:pointer;
 
-    font-size:16px;
+    font-size:20px;
 
     font-weight:bold;
 
@@ -755,7 +755,7 @@ label{
 
     margin-bottom:5px;
 
-    font-size:16px;
+    font-size:20px;
 
     font-weight:bold;
 
@@ -780,7 +780,7 @@ textarea{
 
     font-family:"Aptos Serif", Georgia, serif;
 
-    font-size:15px;
+    font-size:20px;
 
     color:darkslategray;
 
@@ -833,7 +833,7 @@ textarea:focus{
 
     padding:11px 14px;
 
-    font-size:15px;
+    font-size:20px;
 
     border:1px solid silver;
 
@@ -852,7 +852,7 @@ textarea:focus{
 
     margin-top:15px;
 
-    font-size:16px;
+    font-size:20px;
 }
 
 
@@ -1011,7 +1011,7 @@ textarea:focus{
 
     font-family:inherit;
 
-    font-size:30px;
+    font-size:32px;
 
     text-decoration:none;
 
@@ -1083,7 +1083,7 @@ textarea:focus{
 
     font-family:Georgia,"Times New Roman",serif;
 
-    font-size:15px;
+    font-size:20px;
 
     font-weight:600;
 
@@ -1272,7 +1272,7 @@ textarea:focus{
 
     font-family:inherit;
 
-    font-size:14px;
+    font-size:20px;
 
     font-weight:normal;
 

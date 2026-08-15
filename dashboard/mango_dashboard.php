@@ -134,7 +134,7 @@ echo htmlspecialchars(
 
 ?>
 
-👋
+
 
 </h2>
 

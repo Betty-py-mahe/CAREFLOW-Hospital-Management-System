@@ -335,6 +335,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     padding:30px;
 }
 
+html,
+body
+{
+    min-height:100%;
+}
+
+body
+{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.report_page
+{
+    flex:1;
+}
 </style>
 
 </head>
@@ -617,6 +634,7 @@ No billing records found.
 include("../includes/coconut_footer.php");
 
 ?>
+
 
 
 </body>

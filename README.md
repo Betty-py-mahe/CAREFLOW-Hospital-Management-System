@@ -376,5 +376,3 @@ Manipal Academy of Higher Education (MAHE)
 https://github.com/Betty-py-mahe
 
 ---
-
-*CAREFLOW is an academic/project implementation developed for demonstrating healthcare information system design, hospital workflow management, and web-based healthcare IT functionality.*
