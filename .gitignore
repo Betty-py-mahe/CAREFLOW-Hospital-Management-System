@@ -1,0 +1,14 @@
+# Database credentials
+database/peach_database.php
+
+# WAMP / local files
+.wamp/
+tmp/
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db

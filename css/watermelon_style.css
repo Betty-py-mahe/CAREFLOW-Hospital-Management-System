@@ -1,0 +1,1863 @@
+/* ==========================================
+   CAREFLOW HOSPITAL MANAGEMENT SYSTEM
+   PROFESSIONAL HEALTHCARE THEME
+========================================== */
+
+
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* ==========================================
+   GLOBAL FONT + BLURRED HOSPITAL BACKGROUND
+========================================== */
+
+body{
+    font-family:"Aptos Serif", Georgia, serif;
+    background-color:aliceblue;
+    color:darkslategray;
+    line-height:1.6;
+
+    position:relative;
+    min-height:100vh;
+}
+
+
+/* ==========================================
+   BLURRED HOSPITAL BACKGROUND
+========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-20px;
+    left:-20px;
+    right:-20px;
+    bottom:-20px;
+
+    background-image:url("../images/hospital.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    filter:blur(6px);
+
+    z-index:-2;
+}
+
+
+/* ==========================================
+   BACKGROUND OVERLAY
+========================================== */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    background:rgba(240,248,255,0.65);
+
+    z-index:-1;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.top_header{
+    background-color:white;
+
+    min-height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 45px;
+
+    border-bottom:1px solid lightgray;
+
+    box-shadow:0px 2px 8px lightgray;
+}
+
+
+/* ==========================================
+   LOGO SECTION
+========================================== */
+
+.logo_section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+.logo{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+}
+
+
+.logo_section h1{
+    color:darkslateblue;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+
+.logo_section p{
+    color:slategray;
+    font-size:14px;
+    margin-top:2px;
+}
+
+
+/* ==========================================
+   HEADER RIGHT
+========================================== */
+
+.header_right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:5px;
+}
+
+
+.system_status{
+    color:seagreen;
+    background-color:honeydew;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+
+.system_status i{
+    font-size:9px;
+    margin-right:5px;
+}
+
+
+.admin_name{
+    color:darkslategray;
+    font-size:16px;
+    font-weight:600;
+}
+
+
+.today_date{
+    color:slategray;
+    font-size:14px;
+}
+
+
+/* ==========================================
+   HORIZONTAL NAVIGATION
+========================================== */
+
+.navigation{
+    background-color:darkslateblue;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    padding:10px 20px;
+
+    width:100%;
+
+    min-height:auto;
+
+    border:none;
+
+    box-sizing:border-box;
+}
+
+
+.navigation a{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-family:"Aptos Serif", Georgia, serif;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    padding:9px 16px;
+
+    width:auto;
+
+    border-radius:5px;
+
+    transition:all 0.25s ease;
+
+    box-sizing:border-box;
+}
+
+
+.navigation a i{
+    width:auto;
+
+    min-width:0;
+
+    text-align:center;
+}
+
+
+.navigation a:hover{
+    background-color:steelblue;
+
+    color:white;
+}
+
+
+.navigation a.active{
+    background-color:steelblue;
+
+    color:white;
+}
+
+
+/* ==========================================
+   PAGE TITLE
+========================================== */
+
+.page_title{
+    text-align:center;
+
+    font-size:30px;
+
+    margin-top:32px;
+    margin-bottom:24px;
+
+    color:darkslateblue;
+
+    font-weight:700;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+    margin-top:50px;
+
+    background-color:darkslateblue;
+
+    color:white;
+
+    text-align:center;
+
+    padding:22px;
+
+    font-size:14px;
+}
+
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard_page{
+    width:92%;
+
+    margin:auto;
+}
+
+
+/* ==========================================
+   WELCOME BOX
+========================================== */
+
+.welcome_box{
+    background-color:white;
+
+    padding:25px 30px;
+
+    margin:25px auto;
+
+    width:95%;
+
+    border-radius:10px;
+
+    border-left:5px solid steelblue;
+
+    box-shadow:0px 3px 12px lightgray;
+}
+
+
+.welcome_box h2{
+    color:darkslateblue;
+
+    margin-bottom:10px;
+
+    font-size:24px;
+}
+
+
+.welcome_box p{
+    color:slategray;
+
+    font-size:16px;
+
+    margin-top:8px;
+}
+
+
+/* ==========================================
+   DASHBOARD CARDS CONTAINER
+========================================== */
+
+.dashboard_container{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+
+/* ==========================================
+   DASHBOARD CARD
+========================================== */
+
+.dashboard_card{
+    background-color:white;
+
+    width:220px;
+
+    min-height:175px;
+
+    padding:25px 20px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    border:1px solid lightgray;
+
+    box-shadow:0px 3px 10px lightgray;
+
+    transition:all 0.25s ease;
+
+    cursor:pointer;
+}
+
+
+.dashboard_card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:0px 7px 18px silver;
+}
+
+
+/* ==========================================
+   CARD ICON
+========================================== */
+
+.card_icon{
+    font-size:42px;
+
+    color:steelblue;
+
+    margin-bottom:12px;
+}
+
+
+.dashboard_card i{
+    font-size:42px;
+
+    color:steelblue;
+}
+
+
+/* ==========================================
+   CARD TITLE
+========================================== */
+
+.card_title{
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:darkslategray;
+}
+
+
+/* ==========================================
+   CARD NUMBER
+========================================== */
+
+.card_number{
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:seagreen;
+
+    margin-top:8px;
+}
+
+
+/* ==========================================
+   DASHBOARD TABLE
+========================================== */
+
+.dashboard_table{
+    margin-top:40px;
+}
+
+
+/* ==========================================
+   TABLES
+========================================== */
+
+table{
+    width:95%;
+
+    margin:25px auto;
+
+    border-collapse:collapse;
+
+    background-color:white;
+
+    border:1px solid lightgray;
+
+    box-shadow:0px 3px 10px lightgray;
+}
+
+
+/* ==========================================
+   TABLE HEADER
+========================================== */
+
+th{
+    background-color:darkslateblue;
+
+    color:white;
+
+    padding:13px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    text-align:center;
+}
+
+
+/* ==========================================
+   TABLE DATA
+========================================== */
+
+td{
+    padding:12px;
+
+    text-align:center;
+
+    color:darkslategray;
+
+    border-bottom:1px solid gainsboro;
+
+    font-size:15px;
+}
+
+
+/* ==========================================
+   ALTERNATE ROWS
+========================================== */
+
+tr:nth-child(even){
+    background-color:aliceblue;
+}
+
+
+/* ==========================================
+   TABLE HOVER
+========================================== */
+
+tr:hover{
+    background-color:lightcyan;
+}
+
+
+/* ==========================================
+   DASHBOARD APPOINTMENT TABLE
+========================================== */
+
+.dashboard_page table{
+    width:100%;
+
+    margin-top:15px;
+}
+
+
+/* ==========================================
+   TABLE LINKS
+========================================== */
+
+table a{
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+
+/* ==========================================
+   EDIT BUTTON
+========================================== */
+
+.edit_button{
+    background-color:darkorange;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+
+.edit_button:hover{
+    background-color:orange;
+}
+
+
+/* ==========================================
+   DELETE BUTTON
+========================================== */
+
+.delete_button{
+    background-color:crimson;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+
+.delete_button:hover{
+    background-color:red;
+}
+
+
+/* ==========================================
+   QUICK ACTIONS
+========================================== */
+
+.quick_action_container{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-top:20px;
+}
+
+
+/* ==========================================
+   QUICK ACTION BUTTON
+========================================== */
+
+.quick_button{
+    background-color:white;
+
+    color:darkslateblue;
+
+    width:190px;
+
+    padding:22px 15px;
+
+    border:1px solid lightgray;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:all 0.25s ease;
+
+    box-shadow:0px 3px 10px lightgray;
+}
+
+
+/* ==========================================
+   QUICK ACTION ICON
+========================================== */
+
+.quick_button i{
+    font-size:38px;
+
+    color:steelblue;
+
+    margin-bottom:8px;
+}
+
+
+/* ==========================================
+   QUICK ACTION HOVER
+========================================== */
+
+.quick_button:hover{
+    background-color:aliceblue;
+
+    color:darkslateblue;
+
+    transform:translateY(-5px);
+
+    box-shadow:0px 7px 16px silver;
+}
+
+
+/* ==========================================
+   GENERAL SUBMIT BUTTON
+========================================== */
+
+input[type="submit"]{
+    background-color:darkslateblue;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:all 0.25s ease;
+}
+
+
+input[type="submit"]:hover{
+    background-color:steelblue;
+}
+
+
+/* ==========================================
+   FORM BOX
+========================================== */
+
+.form_box{
+    background-color:white;
+
+    width:85%;
+
+    margin:30px auto;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    border:1px solid lightgray;
+
+    box-shadow:0px 3px 12px lightgray;
+}
+
+
+/* ==========================================
+   FORM HEADING
+========================================== */
+
+.form_box h2{
+    text-align:center;
+
+    color:darkslateblue;
+
+    margin-bottom:20px;
+
+    font-size:24px;
+}
+
+
+/* ==========================================
+   FORM LABELS
+========================================== */
+
+label{
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:5px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:darkslategray;
+}
+
+
+/* ==========================================
+   INPUTS / SELECT / TEXTAREA
+========================================== */
+
+input,
+select,
+textarea{
+    width:100%;
+
+    padding:11px 12px;
+
+    margin-top:5px;
+
+    margin-bottom:15px;
+
+    font-family:"Aptos Serif", Georgia, serif;
+
+    font-size:15px;
+
+    color:darkslategray;
+
+    background-color:white;
+
+    border:1px solid silver;
+
+    border-radius:6px;
+
+    outline:none;
+
+    transition:all 0.2s ease;
+}
+
+
+/* ==========================================
+   TEXTAREA
+========================================== */
+
+textarea{
+    min-height:100px;
+
+    resize:vertical;
+}
+
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:steelblue;
+
+    box-shadow:0px 0px 5px lightblue;
+}
+
+
+/* ==========================================
+   SEARCH BOX
+========================================== */
+
+.search_box{
+    width:350px;
+
+    display:block;
+
+    margin:20px auto;
+
+    padding:11px 14px;
+
+    font-size:15px;
+
+    border:1px solid silver;
+
+    border-radius:6px;
+}
+
+
+/* ==========================================
+   FORM MESSAGE
+========================================== */
+
+.form_box h3{
+    text-align:center;
+
+    color:seagreen;
+
+    margin-top:15px;
+
+    font-size:16px;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media(max-width:900px){
+
+    .top_header{
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+
+
+    .header_right{
+        align-items:center;
+    }
+
+
+    .navigation{
+        flex-wrap:wrap;
+
+        gap:5px;
+
+        padding:8px 10px;
+    }
+
+
+    .navigation a{
+        font-size:14px;
+
+        padding:8px 12px;
+    }
+
+
+    .dashboard_card{
+        width:200px;
+    }
+
+
+    .form_box{
+        width:92%;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE DESIGN
+========================================== */
+
+@media(max-width:600px){
+
+    .top_header{
+        padding:15px 20px;
+    }
+
+
+    .logo_section h1{
+        font-size:24px;
+    }
+
+
+    .logo_section p{
+        font-size:12px;
+    }
+
+
+    .page_title{
+        font-size:24px;
+    }
+
+
+    .dashboard_page{
+        width:96%;
+    }
+
+
+    .welcome_box{
+        width:100%;
+
+        padding:20px;
+    }
+
+
+    .dashboard_container{
+        gap:15px;
+    }
+
+
+    .dashboard_card{
+        width:100%;
+
+        max-width:320px;
+    }
+
+
+    .form_box{
+        width:96%;
+
+        padding:20px;
+    }
+
+
+    .search_box{
+        width:90%;
+    }
+
+
+    table{
+        width:100%;
+
+        font-size:13px;
+
+        overflow-x:auto;
+    }
+
+
+    th,
+    td{
+        padding:8px;
+
+        font-size:13px;
+    }
+
+
+    .quick_button{
+        width:100%;
+
+        max-width:300px;
+    }
+
+}
+
+
+/* ==========================================
+   SETTINGS BUTTON
+========================================== */
+
+.settings_button{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    padding:6px 6px;
+
+    width:auto;
+
+    font-family:inherit;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    cursor:pointer;
+}
+
+
+/* ==========================================
+   CAREFLOW SETTINGS PAGE
+========================================== */
+
+.settings_page{
+    width:95%;
+
+    margin:30px auto;
+}
+
+
+.settings_container{
+    display:grid;
+
+    grid-template-columns:240px 1fr;
+
+    min-height:550px;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 12px rgba(0,0,0,0.10);
+}
+
+
+/* ==========================================
+   LEFT SETTINGS MENU
+========================================== */
+
+.settings_menu{
+    width:220px;
+
+    flex-shrink:0;
+}
+
+
+.settings_tab{
+    width:100%;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 15px;
+
+    margin:0 0 8px 0;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:transparent;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+.settings_tab:hover{
+    background:#e9edf2;
+}
+
+
+.settings_tab.active{
+    background:#e8f0f5;
+
+    font-weight:700;
+}
+
+
+.settings_tab i{
+    width:20px;
+
+    min-width:20px;
+
+    text-align:center;
+}
+
+
+/* ==========================================
+   RIGHT SETTINGS CONTENT
+========================================== */
+
+.settings_content{
+    padding:35px;
+}
+
+
+.settings_section{
+    display:none;
+}
+
+
+.settings_section.active{
+    display:block;
+}
+
+
+.settings_section h2{
+    margin-top:0;
+}
+
+
+.settings_section p{
+    color:#666;
+
+    margin-bottom:25px;
+}
+
+
+.settings_section hr{
+    border:none;
+
+    border-top:1px solid #ddd;
+
+    margin:20px 0 25px;
+}
+
+
+/* ==========================================
+   SETTINGS FORM
+========================================== */
+
+.settings_form_row{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+
+.settings_section label{
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:7px;
+
+    font-weight:600;
+}
+
+
+.settings_section input[type="text"]{
+    width:100%;
+
+    padding:11px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    box-sizing:border-box;
+
+    font-family:inherit;
+}
+
+
+.settings_section input[type="submit"]{
+    margin-top:25px;
+}
+
+
+/* ==========================================
+   SHIFT STATUS
+========================================== */
+
+.settings_section input[type="radio"]{
+    margin-right:8px;
+}
+
+
+/* ==========================================
+   SETTINGS RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .settings_container{
+        display:flex;
+
+        flex-direction:column;
+
+        gap:25px;
+
+        align-items:flex-start;
+    }
+
+
+    .settings_menu{
+        width:100%;
+
+        border-right:none;
+
+        border-bottom:1px solid #ddd;
+    }
+
+
+    .settings_form_row{
+        grid-template-columns:1fr;
+
+        gap:0;
+    }
+
+
+    .settings_content{
+        padding:20px;
+    }
+
+}
+
+
+/* ==========================================
+   HEADER SETTINGS BUTTON
+========================================== */
+
+.top_header .header_right .settings_button{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    width:auto;
+
+    min-width:auto;
+
+    height:auto;
+
+    padding:6px 10px;
+
+    margin:0;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:normal;
+
+    line-height:normal;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    box-sizing:border-box;
+}
+
+
+.top_header .header_right a.settings_button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    width:auto;
+
+    min-width:0;
+
+    height:auto;
+
+    padding:7px 12px;
+
+    margin:0;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    line-height:1;
+
+    color:inherit;
+
+    background:transparent;
+
+    text-decoration:none;
+
+    border:1px solid currentColor;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    box-sizing:border-box;
+}
+
+
+.top_header .header_right a.settings_button:link,
+.top_header .header_right a.settings_button:visited,
+.top_header .header_right a.settings_button:hover,
+.top_header .header_right a.settings_button:active{
+
+    color:inherit;
+
+    text-decoration:none;
+}
+
+
+.top_header .header_right a.settings_button:hover{
+
+    opacity:0.85;
+}
+
+
+/* ==========================================
+   DASHBOARD HEADER BUTTON
+========================================== */
+
+.dashboard_header_button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    padding:7px 12px;
+
+    margin:0;
+
+    width:auto;
+
+    height:auto;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    line-height:1;
+
+    text-decoration:none;
+
+    border:1px solid currentColor;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    box-sizing:border-box;
+}
+
+
+/* ==========================================
+   SHIFT STATUS OPTIONS
+========================================== */
+
+.shift_status_options{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-top:10px;
+
+    margin-bottom:20px;
+}
+
+
+.shift_status_options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    margin:0;
+
+    padding:0;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:15px;
+
+    font-weight:normal;
+
+    cursor:pointer;
+}
+
+
+.shift_status_options input[type="radio"]{
+
+    margin:0;
+
+    width:auto;
+}
+
+
+/* ==========================================
+   SETTINGS OPTION BUTTONS
+========================================== */
+
+.shift_options,
+.notification_options{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin:15px 0 20px 0;
+}
+
+
+/* Hide original radio/checkbox */
+
+.shift_option input,
+.notification_option input{
+
+    display:none;
+}
+
+
+/* Button appearance */
+
+.shift_option,
+.notification_option{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border:1px solid #ccc;
+
+    border-radius:7px;
+
+    background:#f5f5f5;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+
+/* Hover */
+
+.shift_option:hover,
+.notification_option:hover{
+
+    transform:translateY(-1px);
+}
+
+
+/* Selected */
+
+.shift_option:has(input:checked),
+.notification_option:has(input:checked){
+
+    background:#e8f0ff;
+
+    border-color:#4267b2;
+}
+
+
+/* ==========================================
+   SETTINGS SAVE BUTTON
+========================================== */
+
+.settings_save_button{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:7px;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+
+/* ==========================================
+   SETTINGS RADIO / CHECKBOX ALIGNMENT
+========================================== */
+
+.option_group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:10px;
+}
+
+
+.option_item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:fit-content;
+
+    margin:0;
+
+    padding:0;
+
+    cursor:pointer;
+}
+
+
+.option_item input[type="radio"],
+.option_item input[type="checkbox"]{
+
+    width:16px;
+
+    height:16px;
+
+    margin:0;
+
+    padding:0;
+
+    flex-shrink:0;
+
+    cursor:pointer;
+}
+
+
+.option_item span{
+
+    display:inline-block;
+
+    line-height:16px;
+}
+
+
+/* ==========================================
+   CARE TEAM TABLE
+========================================== */
+
+.care_team_table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+}
+
+
+.care_team_table th{
+
+    padding:12px;
+
+    text-align:left;
+}
+
+
+.care_team_table td{
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+}
+
+
+.care_team_table th,
+.care_team_table td{
+
+    vertical-align:middle;
+}
+
+
+/* ==========================================
+   EHR & DEVICES
+========================================== */
+
+.ehr_container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+
+.ehr_card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    background:#fff;
+}
+
+
+.ehr_icon{
+
+    width:42px;
+
+    min-width:42px;
+
+    text-align:center;
+
+    font-size:22px;
+}
+
+
+.ehr_details h3{
+
+    margin:0 0 5px 0;
+}
+
+
+.ehr_details p{
+
+    margin:0 0 8px 0;
+}
+
+
+.ehr_status{
+
+    font-size:14px;
+}
+
+
+.ehr_status i{
+
+    font-size:9px;
+
+    margin-right:5px;
+}
+
+
+/* ==========================================
+   SECURITY & LOGS
+========================================== */
+
+.security_container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+
+.security_card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    background:#fff;
+}
+
+
+.security_icon{
+
+    width:42px;
+
+    min-width:42px;
+
+    text-align:center;
+
+    font-size:22px;
+}
+
+
+.security_details h3{
+
+    margin:0 0 5px 0;
+}
+
+
+.security_details p{
+
+    margin:0 0 8px 0;
+
+    line-height:1.5;
+}
+
+
+.security_status{
+
+    font-size:14px;
+}
+
+
+.security_status i{
+
+    font-size:9px;
+
+    margin-right:5px;
+}
+
+
+/* ==========================================
+   IMPORTANT
+   NO WHITE SIDEBAR CSS HERE
+========================================== */
+
+/*
+   Do NOT add another .navigation definition below this point.
+   The navigation is intentionally horizontal and dark blue.
+*/
+
+
+/* ==========================================
+   FINAL RESPONSIVE NAVIGATION
+========================================== */
+
+@media(max-width:900px){
+
+    .navigation{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:8px 10px;
+
+        gap:5px;
+    }
+
+
+    .navigation a{
+
+        width:auto;
+
+        padding:8px 12px;
+
+        font-size:14px;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navigation{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        align-items:center;
+
+        width:100%;
+
+        padding:8px;
+
+        gap:4px;
+    }
+
+
+    .navigation a{
+
+        width:auto;
+
+        padding:7px 9px;
+
+        font-size:13px;
+    }
+
+
+    .navigation a i{
+
+        font-size:13px;
+    }
+
+}
